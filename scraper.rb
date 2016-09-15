@@ -38,6 +38,8 @@ end
 def add_person_to_list(mp_name, url)
 
    puts "\nName: " + mp_name.to_s
+   mp_ID =  url.to_s.split("=").last
+   puts "ID: " + mp_ID
 
    # This is expected in the OpenAustarlia/TWFY import script, 
    # in the interests of not changing anything more than I need to, here is
@@ -45,13 +47,15 @@ def add_person_to_list(mp_name, url)
    mp_birthday = ""
 
    data = { 
-     id: url.to_s.split("=").last,
-     id__saparl: url.to_s.split("=").last,
+     id: mp_ID,
+     id__saparl: mp_ID,
      full_name: mp_name,
      birthday: mp_birthday
    }
 
    ScraperWiki.save_sqlite([:id], data)
+
+   puts "Saved..."
 end
 
 scrape_list(sa_mps_url)
