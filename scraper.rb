@@ -37,8 +37,6 @@ end
 
 def add_person_to_list(mp_name, url)
 
-   noko = noko_for(url)
-
    puts "\nName: " + mp_name.to_s
 
    # This is expected in the OpenAustarlia/TWFY import script, 
