@@ -11,7 +11,7 @@
 
 require 'scraperwiki'
 require 'nokogiri' # Mechanize will have to wait for next week
-require 'open-uri'
+#require 'open-uri'
 
 # This is stopping me from debugging/running
 # what do I need these for? 
@@ -37,9 +37,8 @@ end
 
 def add_person_to_list(mp_name, url)
 
-   puts "\nName: " + mp_name.to_s
    mp_ID =  url.to_s.split("=").last
-   puts "ID: " + mp_ID
+   puts mp_ID+", "+mp_ID+", "+ mp_name.to_s
 
    # This is expected in the OpenAustarlia/TWFY import script, 
    # in the interests of not changing anything more than I need to, here is
@@ -55,7 +54,6 @@ def add_person_to_list(mp_name, url)
 
    ScraperWiki.save_sqlite([:id], data)
 
-   puts "Saved..."
 end
 
 scrape_list(sa_mps_url)

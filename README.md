@@ -1,6 +1,8 @@
 
 Scrapes just the list of MPS and their URLS, but not which house they belong to.
 
+BROKEN I can't figure out why this doesn't actually put anything into a Sqlite database!? It does on my own machine but not on Morph.io
+
 Those two csv files need to be generated separately to get their own URLs, so that forked openaustralia parsers can pull them into a database. 
 
 scraper #1: List of MPS - this one:
